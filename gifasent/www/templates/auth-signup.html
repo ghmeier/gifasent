@@ -1,0 +1,32 @@
+<ion-view title="welcome to gifasent" hide-back-button="true" animation="slide-left-right-ios7" >
+
+<ion-content class="has-header">
+  <div class="card" >
+    <label class="item item-input">
+    <input type="text" ng-model="user.username" placeholder="gifasent username" maxlength="12">
+    </label>
+    <label class="item item-input">
+      <input type="text" ng-model="user.email" placeholder="email">
+    </label>
+    <label class="item item-input">
+      <input type="password" ng-model="user.password" placeholder="password">
+    </label>
+    <label class="item item-input">
+      <button class="button button-block button-salmon" ng-click="createUser()">
+        Register
+      </button>
+    </label>
+        </div>
+</ion-content>
+        <div class="bar bar-footer">
+      <div class="button-bar">
+  <button class="button button-clear" style="background-color:#4ea1a3;color:white;" title="Sign Up" on-tap="toSignup()">
+  Sign Up
+  </button>
+  <button title="Sign In" class="button button-clear" style="color:#4ea1a3" on-tap="toSignin()">
+      Sign In
+  </button>
+  </a>
+  </div>
+  </div>
+</ion-view>

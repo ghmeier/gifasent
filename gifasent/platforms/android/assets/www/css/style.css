@@ -1,0 +1,120 @@
+.margin {
+  margin-left: 9px;
+  margin-right: 9px;
+}
+.icon-actions {
+  font-size: 23px;
+}
+.checkbox {
+  vertical-align: middle;
+}
+.actions {
+  float: right;
+}
+.item-text-wrap {
+  overflow: auto;
+}
+.ion-checkmark-circled.icon-actions.margin{
+  margin-right: 35px;
+}
+
+.title{
+    font-family: 'Nothing You Could Do';
+      color:white !important;
+      font-size:30px !important;
+      font-weight:200 !important;
+}
+
+.sample-show-hide {
+    opacity:.6;
+    z-index:100;
+    left:0px;
+    top:0px;
+    position:absolute;
+    border-width:0px;
+    font-size:2em;
+    color:gray;
+    background:transparent
+  }
+
+  .star-head{
+    color:yellow;
+    font-size:50%;
+    vertical-align: middle;
+  }
+
+.popup-head {
+    background-color : #f47153;
+    color:white;
+}
+.popup-title {
+    color:white;
+}
+.popup-buttons .button {
+    background-color : #f47153;
+    color:white;
+    border:1px solid white;
+}
+
+.gifasent-teal{
+  background-color:#4ea1a3!important;
+  color:white!important;
+}
+
+.gifasent-salmon{
+    background-color:#f47153!important;
+    color:white!important;
+}
+
+.gifasent-light-grey{
+    background-color:#D4D4D4!important;
+    color:white!important;
+}
+
+.gifasent-grey{
+    background-color:grey!important;
+    color:white!important;
+}
+
+.yellow{
+  color:yellow;
+}
+
+    .bar.bar-gifblue {
+    border-color: #4ea1a3;
+    background-color: #4ea1a3;
+    color: #fff;
+    }
+    .bar.bar-gifblue .title {
+      color: #fff; }
+    .bar.bar-positive .title {
+      color: #fff; }
+    .bar.bar-positive.bar-footer {
+      background-image: linear-gradient(180deg, #145fd7, #145fd7 50%, transparent 50%); }
+
+      .tabs-striped.tabs-background-salmon .tabs {
+    background-color: #f47153; }
+    .tabs-striped.tabs-color-salmonx .tab-item {
+    color: rgba(255, 255, 255, 0.4);
+    opacity: 1; }
+.tabs-striped.tabs-color-salmon .tab-item .badge {
+    opacity: 0.4; }
+.tabs-striped.tabs-color-salmon .tab-item.tab-item-active, .tabs-striped.tabs-color-salmon .tab-item.active, .tabs-striped.tabs-color-salmon .tab-item.activated {
+    margin-top: -2px;
+    color: #fff;
+    border: 0 solid #4ea1a3;
+    border-top-width: 5px; }
+.tabs-striped.tabs-color-salmon .tab-item.tab-item-active .badge, .tabs-striped.tabs-color-salmon .tab-item.active .badge, .tabs-striped.tabs-color-salmon .tab-item.activated .badge {
+    top: 2px;
+    opacity: 1; }
+
+       .button.button-salmon {
+    border-color: #f47153;
+    background-color: #f47153;
+    color: #fff;
+    }
+
+       .button.button-salmon.active, .button.button-salmon.activated {
+      border-color: #f47153;
+      background-color: #f47153;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }

@@ -1,0 +1,66 @@
+<ion-view hide-back-button="true" title="{{feed['name']}}">
+    <ion-nav-buttons side="right">
+        <button style="color:white;opacity:.5" ng-show="showSeen" class="button button-clear icon ion-eye"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button style="color:white;" class="button button-clear icon ion-person-add" ng-show="false" on-tap="addPerson()"></button>
+    </ion-nav-buttons>
+            <ion-nav-buttons side="left">
+            <button style="color:white" class="button button-clear icon ion-arrow-left-c" on-tap="goBack()"></button>
+
+        </ion-nav-buttons>
+    <ion-content style="background-color:#f47153;"  scrollbar-y="false" scroll="true" padding="false" class="has-header" has-tabs="false" >
+        <ion-list ng-repeat="gif in gifs | limitTo: number" style="border:0px;padding:0px;">
+                <div class="item tabs tabs-secondary tabs-icon-left" style="width:101%;border-width:0px;margin-top:-2px;margin-right:-4px;">
+                    <a class="tab-item" style="text-align:left;padding-left:15px;padding-top:5px;">
+                        <h2>{{gif['sender']}}</h2><h4 style="color:gray"> {{gif['time']}}</h4>
+                    </a>
+                    <a class="tab-item" on-tap="toggleStar(gif)">
+                    </a>
+                    <a class="tab-item" href="#" on-tap="share(gif)">
+                        <i class="icon ion-share"></i>
+                        Share
+                    </a>
+                </div>
+                <ion-item class="item item-image" style="z-index:1;background:transparent;border-width:0px;">
+                    <img ng-src="{{gif.static && gif.surl || gif.url}}" on-tap="toggleGif(gif)"imageonload>
+                        <div class="item item-icon sample-show-hide" style="" ng-class="{'ion-pause' : gif['static'],'ion-play' : !gif['static']}"></div>
+
+                    </img>
+                </ion-item>
+                <div style="background-color:#fff;" >
+                    <ion-item class="item item-text-wrap" ng-show="gif.text" style="padding-top:4%; padding-bottom:4%;background:transparent;border-width:0px;">
+                        <h1 style="text-align:left; font-size:100%; color:#000;">{{gif['text']}}</h1>
+                    </ion-item>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left" style="width:101%;border-width:0px;margin-top:-2px;margin-right:-4px;">
+                    <a class="tab-item" on-tap="toggleStar(gif)">
+                        <i class="icon ion-star" ng-class="{yellow:gif.starred}"></i>
+                        {{gif['total_stars']}}
+                    </a>
+                    <a class="tab-item"  on-tap="openModal(gif)">
+                        <i class="icon ion-navicon"></i>
+                        <!-- Total number of comments actually go here once its implemented-->
+                        Comments ({{gif.comments.length}})
+                    </a>
+                </div>
+                <div style="height:20px; background-color:#DBDBDB;">
+                </div>
+            </div>
+        </ion-list>
+        <ion-item class="item item-divider" style="background:transparent;width:100%; height:43px;border-width:0px;">
+        </ion-item>
+        <ion-infinite-scroll on-infinite="loadMore()" distance="2%">
+        </ion-infinite-scroll>
+    </ion-content>
+    <div class="bar bar-footer item-input-inset" ng-show="feed['admin'] !== '1'" style="background:#4ea1a3;">
+            <div class="item-input-wrapper">
+               <!--<i class="icon ion-ios7-email placeholder-icon" style=""></i>-->
+               <textarea style="width:100%; background-color:#fff; color:#000; font-size:15px" draggable="false" type="text" placeholder=" message..." ng-model="gif.message"></textarea>
+           </div>
+           <div class="button button-clear button-large" style="font-size:25px;color:white;padding-top:3px;" on-touch="getGif()" >
+                SEND<img src="./img/gifasentIcon.svg" style="height:27px;"/>
+            </div>
+        </div>
+    </div>
+</ion-view>

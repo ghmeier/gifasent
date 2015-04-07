@@ -1,0 +1,57 @@
+<ion-view title="new convo" hide-back-button='true'>
+    <ion-nav-buttons side="left">
+     <button style="color:white; " class="button button-clear icon ion-arrow-left-c" on-tap="goBack()"></button>
+     </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button ng-show="tempFeed.rec.length >= 1" style="color:white; font-size:200%;" class="button button-clear" on-tap="start()">start!</button>
+    </ion-nav-buttons>
+
+         <div class="tabs-striped tabs-background-salmon tabs-color-salmon" style="height:20px;">
+        <div class="tabs">
+            <a class="tab-item active" on-tap="toNewConv()">
+                gifasent users
+            </a>
+            <a class="tab-item" on-tap="toNewContact()">
+                contacts
+            </a>
+        </div>
+    </div>
+<ion-content style="background-color:#f47153;" scrollbar-y="false" scroll="true" padding="false" has-tabs="true">
+
+<ion-list ng-show="tempFeed.rec.length >= 1">
+  <div ng-repeat="name in tempFeed.rec">
+    <ion-item class="item item-icon-right gifasent-light-grey" on-tap="removeUser(name)">
+      <h2 style="">{{name}}</h2>
+      <i style="color:red;" class="icon ion-close"></i>
+    </ion-item>
+  </div>
+</ion-list>
+<ion-list class="list">  
+  <ion-item class="item-input-inset">
+    <label class="item-input-wrapper">
+      <input ng-model="data.item" type="text" placeholder="gifasent username.">
+    </label>
+    <button class="button button-small button-clear" on-tap="getUser()">
+      <i class="icon ion-plus"></i>
+      </button>
+  </ion-item>
+    <ion-item class="item item-icon-right " on-tap="addRandom()">
+    random user
+    <i class="icon ion-plus"></i>
+  </ion-item>
+  <div ng-repeat="feed in feeds | orderBy:'name'" ng-if="feed.recname.length < 2 && feed.recname.length > 0 && feed.name !== 'just you'">
+    <ion-item class="item item-icon-right" on-tap="addUser(feed)">
+      <h2 style="">{{ feed.recname[0] }}</h2>
+      <i class="icon ion-plus"></i>     
+    </ion-item>
+  </div>
+  <ion-item class="item item-icon-right " >
+    
+  </ion-item>
+
+  </ion-list>
+
+</ion-content>
+</ion-view>
+
+

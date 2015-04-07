@@ -1,0 +1,40 @@
+
+<ion-view title="new convo" hide-back-button='true'>
+    <ion-nav-buttons side="left">
+       <button style="color:white; " class="button button-clear icon ion-arrow-left-c" on-tap="goBack()"></button>
+     </ion-nav-buttons>
+         <div class="tabs-striped tabs-background-salmon tabs-color-salmon" style="height:20px;">
+        <div class="tabs">
+            <a class="tab-item" on-tap="toNewConv()">
+                <!--<i class="icon ion-home"></i>-->
+                gifasent users
+            </a>
+            <a class="tab-item active" on-tap="tonewContact()">
+                <!--<i class="icon ion-star"></i>-->
+                contacts
+            </a>
+        </div>
+    </div>
+<ion-content style="background-color:#f47153;" scrollbar-y="false" scroll="true" padding="false" has-tabs="true">
+  <ion-list class="list inset-list">
+    <ion-item class="item-input-inset">
+    <label class="item-input-wrapper" ng-show="ionic.Platform.isIOS()">
+      <input ng-model="contactName" type="text" ng-change="findContacts()" placeholder="search contacts.">
+    </label>
+    <!--<button class="button button-small button-clear" on-tap="findContacts()">
+      &nbsp;go.&nbsp;
+    </button>-->
+  </ion-item> 
+  <div ng-repeat="contact in contacts | orderBy:'name'">
+    <ion-item class="item item-icon-right" on-tap="invite(contact)">
+      <h2 style="">{{contact.name}}</h2>
+      <p>{{contact.info}}</p>
+    </ion-item>
+  </div>
+</ion-list>
+<ion-infinite-scroll on-infinite="loadMore()" distance="1%">
+</ion-infinite-scroll>
+</ion-content>
+</ion-view>
+
+

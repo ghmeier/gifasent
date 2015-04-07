@@ -1,0 +1,71 @@
+<ion-view title="profile" hide-back-button='true'>
+    <ion-nav-buttons side="left">
+     <button style="color:white; " class="button button-clear icon ion-arrow-left-c" on-tap="toConversations()"></button>
+     </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <!--<button style="color:white;opacity:.5;" class="button button-clear icon ion-star">{{stars}}</button>-->
+    </ion-nav-buttons>
+<ion-content style="background-color:#f47153;" class="has-header" has-tabs="false" on-tap="" scroll-watch>
+    
+    <ion-toggle ng-model="pushNotification.checked" ng-change="pushNotificationsChanged()">
+        Push Notifications
+    </ion-toggle>
+    
+    <div class="card">
+        <div class="item item-divider" style="text-align:center;">
+            {{userName}}
+        </div>
+        <div class="item item-text-wrap">
+             gifasent score: <span style="color:#4ea1a3;">{{score}}</span>
+        </div>
+        <div class="item item-text-wrap">
+             gifs sent: <span style="color:#4ea1a3;">{{totalGifs}}</span>
+        </div>
+        <div class="item item-text-wrap">
+            conversations created: <span style="color:#4ea1a3;">{{groupsCreated}}</span>
+        </div>
+        <div class="item item-text-wrap">
+            email: <span style="color:#4ea1a3;">{{userEmail}}</span>
+        </div>
+    </div>
+    <!--<div style="display:block; margin-left:auto; margin-right:auto; margin-top:10%; width:90%; background-color:white; padding-bottom:10%; padding-top:10%;">
+        <h1 style="text-align:center; font-size:200%; color:black;">
+            statistics
+        </h1>
+        </br>
+        <h3 style="text-align:center; font-size:150%; color:black;">
+            gifasent score: <span style="color:#4ea1a3;">{{score}}</span>
+        </h3>
+        <h3 style="text-align:center; font-size:150%; color:black;">
+             gifasent score: <span style="color:#4ea1a3;">{{score}}</span>
+        </h3>
+        </br>
+    </div>
+    <div style="display:block; margin-left:auto; margin-right:auto; width:90%; background-color:#4ea1a3; margin-top:10%; padding-bottom:5%; padding-top:5%;">
+        <h3 style="text-align:center; font-size:140%; color:white;">
+            follow us
+        </h3>
+        <h3 style="text-align:center; font-size:140%; color:white;">
+            <button style="color:white; font-size: 150%;" class="button button-clear ion-social-facebook"></button>
+            <button style="color:white; font-size: 150%;" class="button button-clear icon ion-social-twitter"></button>
+        </h3>
+        <h3 style="text-align:center; font-size:140%; color:white; padding-left:5%; padding-right:5%;">
+            learn about updates, challenges, and winning prizes
+            </br>
+            </br>
+            just search gifasent and look for the upsidedown i
+        </h3>
+    </div>-->
+    <div style="display:block; margin-left:auto; margin-right:auto; margin-top:10%; width:90%; background-color:black;">
+        <button style="color:white; display:block; margin-left:auto; margin-right:auto;" class="button button-clear icon ion-heart" onclick="window.open('http://www.gifasent.co','_blank');"> website</button>
+    </div>
+    <!--<div style="display:block; margin-left:auto; margin-right:auto; margin-top:5%; width:90%; background-color:black;">
+        <button style="color:white; display:block; margin-left:auto; margin-right:auto;" class="button button-clear icon ion-arrow-swap" on-tap="changePassword()"> change password</button>
+    </div>-->
+    <div style="display:block; margin-left:auto; margin-right:auto; margin-top:5%; width:90%; background-color:black;">
+        <button style="color:white; display:block; margin-left:auto; margin-right:auto;" class="button button-clear icon ion-log-out" on-tap="logout()"> logout</button>
+    </div>
+    <div style="padding-bottom:20%;">
+    </div>
+</ion-content>
+</ion-view>

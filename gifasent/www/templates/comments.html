@@ -1,0 +1,36 @@
+<ion-modal-view >
+      <header class="bar bar-header bar-secondary">
+      <button style="color:#4ea1a3;" class="button button-clear icon ion-arrow-left-c" ng-click="closeModal()"></button>
+	      <h1 class="title">Comments</h1>
+	    
+	  </header>
+    <ion-content  scrollbar-y="false" scroll="true" padding="false" class="has-header">
+        <ion-refresher on-refresh="refreshComments(gif)"></ion-refresher>
+    	<ion-item ng-show="selectGif.comments.length < 1 || !selectGif.comments">
+    		No comments.
+    	</ion-item>
+   	    <ion-list ng-repeat="comment in selectGif.comments">
+		  <div style="">
+		    <ion-item class="item item-icon-right item-text-wrap" on-tap="">
+		      <h2 style="font-size:100%;">{{comment.message}}</h2>
+              <div>
+                  <!--<div style="height:1px; background-color:#D4D4D4; width:115%; margin-top:15px;"></div>-->
+                  <h2 style="font-size:90%; float:left; color:grey; margin-top:10px;margin-bottom:-10px;">{{comment.sender}}</h2>
+                  <h2 style="font-size:90%; float:right; color:grey; margin-right:-15%; margin-top:10px; margin-bottom:-10px;">{{comment.time}}</h2>
+              </div>
+		    </ion-item>
+		  </div>
+		</ion-list>
+        <div style="height:120px;">
+        </div>
+    </ion-content>
+    <div class="bar bar-footer item-input-inset" style="background:#4ea1a3;">
+            <div class="item-input-wrapper">
+               <textarea style="width:100%; background-color:#fff; color:#000; font-size:15px" id="other" draggable="false" type="text" placeholder=" comment..." ng-model="data.item"></textarea>
+           </div>
+           <div class="button button-clear button-large" style="font-size:15px;color:white;padding-top:3px;" on-tap="send()" >
+                Comment
+            </div>
+        </div>
+    </div>
+</ion-modal-view>

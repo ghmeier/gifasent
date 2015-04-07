@@ -1,0 +1,45 @@
+<ion-view title="{{userName}}" hide-back-button='true'>
+    <ion-nav-buttons side="left">
+     <button style="color:white; " class="button button-clear icon ion-person-add" on-tap="newTask()"></button>
+     </ion-nav-buttons>
+     <ion-nav-buttons side="right">
+         <!--<button style="color:white;opacity:.5;" class="button button-clear icon ion-star">{{stars}}</button>-->
+         <button style="color:white; " class="button button-clear icon ion-gear-a" on-tap="toProfile()"></button>
+     </ion-nav-buttons>
+    <div class="tabs-striped tabs-background-salmon tabs-color-salmon" ng-show="tabSlider" style="height:20px;">
+        <div class="tabs">
+            <a class="tab-item" on-tap="toConversations()">
+                <!--<i class="icon ion-home"></i>-->
+                <img class="icon" src="./img/gifasentIcon.svg" ng-show="conversationNotification" style="height:100%;position:absolute; margin-left:20%; opacity:0.3;" />
+                <h1 style="font-size:100%; color:black; margin-top:10%;">conversations</h1>
+            </a>
+            <a class="tab-item active" on-tap="toAdminConversations()">
+                <!--<i class="icon ion-star"></i>-->
+                <img class="icon" src="./img/gifasentIcon.svg" ng-show="officialFeedNotification" style="height:100%;position:absolute; margin-left:20%; opacity:0.3; margin-top:-2px;" />
+                <h1 style="font-size:100%; color:white; margin-top:9%;">offical feeds</h1>
+            </a>
+        </div>
+    </div>
+<ion-content style="background-color:#f47153;" class="has-header" has-tabs="false" on-refresh="onRefresh()" on-tap="" scroll-watch>
+<ion-refresher on-refresh="refreshFeeds()"></ion-refresher>
+
+<ion-list can-swipe="listCanSwipe">
+  <div class="list" style="margin-top:-1px; padding-bottom:50px;">
+    <list-item class="item item-text-wrap item-icon-right item-button-right" ng-repeat="item in list | orderBy:'name' | orderBy:'-notification'" on-drag-left="allowRemove(item)" on-drag-right="stopRemove(item)" id="{{item.key}}" on-tap="action(item)">
+      <span>{{ item.name }}</span>
+      <button class="button button-clear icon-right" ng-class="{'ion-chevron-right': !item.remove && item.notification !== '1','ion-close-round': item.remove, 'button-assertive': item.remove}" >
+          <img class="icon" src="./img/gifasentIcon.svg" style="height:34px" ng-show="item.notification === '1' && !item.remove"/> 
+        </button>
+    </list-item>
+  </div>
+  <div class="card" ng-show="noData && feedLoaded">
+    <div class="item item-text-wrap" >
+      <span>
+      No conversations. Click <i class="icon ion-person-add"></i> and create one.
+      </span>
+    </div>
+  </div>
+</ion-list>
+
+</ion-content>
+</ion-view>

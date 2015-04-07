@@ -1,0 +1,9 @@
+{
+  "firebase": "gifasent2",
+  "public": "www",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
